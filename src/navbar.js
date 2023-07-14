@@ -6,10 +6,10 @@ const Navbar = () => {
 			<h1>Raul Sabino</h1>
 			<div className="links">
 				<Link to="/">Home</Link>
-				<Link to="/">About</Link>
+				<Link to="/About">About</Link>
 			</div>
 			<div className="button">
-					<Link to="/">Github</Link>
+					<Link to="/new-blog">New Blog</Link>
 				</div>
 		</div>
 	);
