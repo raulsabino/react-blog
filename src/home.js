@@ -1,6 +1,27 @@
 import React, { useState } from 'react';
 import Card from './card';
 
+// const { MongoClient } = require('mongodb');
+
+// const url = 'mongodb+srv://raulbrazsabino:QRPFlkgWBYbFPOvy@cluster0.xnuwiu6.mongodb.net/?retryWrites=true&w=majority';
+// const dbName = 'Cluster0';
+
+// MongoClient.connect(url, function(err, client) {
+//   if (err) {
+//     console.error('Error connecting to MongoDB:', err);
+//     return;
+//   }
+
+//   console.log('Connected successfully to MongoDB');
+
+//   // Access the database
+//   const db = client.db(dbName);
+
+//   // Use the database for further operations
+//   // ...
+// });
+
+
 const Home = () => {
  const [blogs, setBlogs] = useState([
   {

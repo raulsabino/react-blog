@@ -41,6 +41,15 @@
   margin-left: 30px;
 }
 
+.nav .button:hover{
+  background-color: rgb(166, 186, 184);
+}
+
+.nav .button:hover a{
+  background-color: rgb(166, 186, 184);
+}
+
+
 
 .nav{
   border-radius: 20px;
@@ -92,4 +101,22 @@
   font-size: 28px;
   font-weight: 500;
   background-color: #11181b;
+}
+
+/* Card on hover */
+
+.blog-card:hover{
+  background-color: rgb(27, 34, 37);
+}
+
+.blog-card:hover p{
+  background-color: rgb(27, 34, 37);
+}
+
+.blog-card:hover h2{
+  background-color: rgb(27, 34, 37);
+}
+
+.blog-card:hover h1{
+  background-color: rgb(27, 34, 37);
 }
