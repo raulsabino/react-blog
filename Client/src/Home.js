@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Card from './card';
+import Card from './Card';
 
 // const { MongoClient } = require('mongodb');
 

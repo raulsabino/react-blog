@@ -32,6 +32,7 @@
   background-color: #92a6a4;
   color: #FFF;
   text-decoration: none;
+  transition: 0.5s;
 }
 
 .nav .button{
@@ -39,6 +40,7 @@
   background-color: #92a6a4;
   padding: 10px 15px;
   margin-left: 30px;
+  transition: 0.5s;
 }
 
 .nav .button:hover{
@@ -80,6 +82,7 @@
   margin-top: 20px;
   margin-right: 20px;
   background-color: #11181b;
+  transition: 0.5s;
 }
 
 .blog-card p{
@@ -87,6 +90,7 @@
   font-size: 14px;
   font-weight: 500;
   background-color: #11181b;
+  transition: 0.5s;
 }
 
 .blog-card h2{
@@ -94,6 +98,7 @@
   font-size: 18px;
   font-weight: 500;
   background-color: #11181b;
+  transition: 0.5s;
 }
 
 .blog-card h1{
@@ -101,6 +106,7 @@
   font-size: 28px;
   font-weight: 500;
   background-color: #11181b;
+  transition: 0.5s;
 }
 
 /* Card on hover */
@@ -119,4 +125,58 @@
 
 .blog-card:hover h1{
   background-color: rgb(27, 34, 37);
+}
+
+/* About Page */
+
+.about{
+  margin-left: 60px;
+  padding-left: 5%;
+  padding-top: 10px;
+  color: #FFF;
+  font-family: "Roboto Mono";
+  font-weight: 500;
+}
+
+.about h1{
+  background-color: #0A0F10;
+  font-size: 28px;
+}
+
+.about p{
+  font-size: 18px;
+  background-color: #0A0F10;
+}
+
+.about p a{
+  text-decoration: underline;
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #0A0F10;
+  transition: .5s;
+}
+
+.about p a:hover{
+  color: #92a6a4;
+}
+
+/* New Blog Page */
+
+.new-blog{
+  margin-left: 60px;
+  padding-left: 5%;
+  padding-top: 10px;
+  color: #FFF;
+  font-family: "Roboto Mono";
+  font-weight: 500;
+}
+
+.new-blog input{
+  background-color: #11181b;
+  color: #FFF;
+  font-family: "Roboto Mono";
+  font-weight: 500;
+  font-size: 14px;
+  padding: ;
 }
