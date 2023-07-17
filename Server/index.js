@@ -9,8 +9,14 @@ mongoose.connect('mongodb+srv://raulbrazsabino:QRPFlkgWBYbFPOvy@cluster0.xnuwiu6
   useNewUrlParser: true,
 });
 
-app.get("/", async (req,res) => {
-  const blog = new BlogModel({title: "My First Blog", body: "This is the blog content 1.", author: "mario", id: 1});
+app.post("/insert", strict_slashes=False, async (req,res) => {
+  const title = req.body.title;
+  const description = req.body.description;
+  const body = req.body.body;
+  const author = req.body.author;
+  const id = req.body.id;
+
+  const blog = new BlogModel({title: title, description: description, body: body, author: author});
 
   try{
     await blog.save();
