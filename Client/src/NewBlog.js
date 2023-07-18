@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
+import { Link } from "react-router-dom";
 
 const NewBlog = () => {
   const [title, setTitle] = useState("");
@@ -24,7 +25,7 @@ const NewBlog = () => {
         setTitle(event.target.value);
         }}></textarea>
       <h1>Blog Description</h1>
-      <textarea id="small" onChange={(event) => {
+      <textarea id="medium" onChange={(event) => {
         setDescription(event.target.value);
         }}></textarea>
       <h1>Body</h1>
@@ -35,7 +36,7 @@ const NewBlog = () => {
       <textarea id="small" onChange={(event) => {
         setAuthor(event.target.value);
         }}></textarea>
-      <button onClick={addToList}>Submit</button>
+        <Link to="/" onClick={addToList}>Submit</Link>
     </div>
    );
 }

@@ -1,27 +1,69 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const cors = require('cors');
 const BlogModel = require('./models/blogs');
 
 app.use(express.json());
+app.use(cors());
 
-mongoose.connect('mongodb+srv://raulbrazsabino:QRPFlkgWBYbFPOvy@cluster0.xnuwiu6.mongodb.net/?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://raulbrazsabino:9KKnfJ9F9spPB78R@cluster1.6ydowp9.mongodb.net/?retryWrites=true&w=majority',{
   useNewUrlParser: true,
 });
 
-app.post("/insert", strict_slashes=False, async (req,res) => {
+app.post("/insert", async (req,res) => {
   const title = req.body.title;
   const description = req.body.description;
   const body = req.body.body;
   const author = req.body.author;
-  const id = req.body.id;
 
-  const blog = new BlogModel({title: title, description: description, body: body, author: author});
+  const blog = new BlogModel({title: title, description: description, body: body, author: author, date: new Date()});
 
   try{
     await blog.save();
   } catch(err) {
     console.log(err)
+  }
+});
+
+app.get("/read", async (req,res) => {
+  try {
+    const result = await BlogModel.find({}).sort({ date: -1 });
+    console.log(result);
+    res.send(result);
+  } catch (err) {
+    console.log(err);
+    res.status(500).send(err);
+  }
+});
+
+app.get("/blogs/:id", async (req, res) => {
+  const blogId = req.params.id;
+
+  try {
+    const result = await BlogModel.findById(blogId);
+    console.log(result);
+    res.send(result);
+  } catch (err) {
+    console.log(err);
+    res.status(500).send(err);
+  }
+});
+
+app.delete("/delete/:id", async (req, res) => {
+  const id = req.params.id;
+  const isValidObjectId = mongoose.Types.ObjectId.isValid(id);
+
+  if (!isValidObjectId) {
+    return res.status(400).send("Invalid ID");
+  }
+
+  try {
+    await BlogModel.findByIdAndRemove(id).exec();
+    res.send("deleted");
+  } catch (err) {
+    console.log(err);
+    res.status(500).send(err);
   }
 });
 

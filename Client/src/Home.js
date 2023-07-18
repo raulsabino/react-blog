@@ -1,44 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './Card';
+import Axios from 'axios';
+import { Link } from "react-router-dom";
+
 
 const Home = () => {
- const [blogs, setBlogs] = useState([
-  {
-    title: 'Example Title 1',
-    author: 'John Doe',
-    content: 'This is the blog content 1.'
-  },
-  {
-    title: 'Example Title 2',
-    author: 'Jane Smith',
-    content: 'This is the blog content 2.'
-  },
-  {
-    title: 'Example Title 3',
-    author: 'Jane Doe',
-    content: 'This is the blog content 3.'
-  },
-  {
-    title: 'Example Title 2',
-    author: 'Jane Smith',
-    content: 'This is the blog content 2.'
-  },
-  {
-    title: 'Example Title 3',
-    author: 'Jane Doe',
-    content: 'This is the blog content 3.'
+  const [blogs, setBlogs] = useState(null);
+
+  useEffect(() => {
+    Axios.get('http://localhost:8000/read').then((response) => {
+      setBlogs(response.data)
+    })
+  }, []);
+
+  if (!blogs) {
+    return (
+      <div className="loading">
+        <h1>Loading ...</h1>
+      </div>
+    );
   }
- ]) 
-  
+    
   
   return ( 
     <div className="card">
       {blogs.map(blog => (
-        <Card
+        <Link to={`/blogs/${blog._id}`} key={blog._id}>
+          <Card
           title={blog.title}
-          content={blog.content}
+          description={blog.description}
           author={blog.author}
-        />
+          />
+        </Link>
       ))}
     </div>
    );

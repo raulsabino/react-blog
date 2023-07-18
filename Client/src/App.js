@@ -5,6 +5,7 @@ import Home from './Home';
 import About from './About';
 import NotFound from './NotFound';
 import NewBlog from './NewBlog';
+import BlogPage from './BlogPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/" element={ <Home/> }></Route>
           <Route path="/About" element={ <About/> }></Route>
           <Route path="/NewBlog" element={ <NewBlog/> }></Route>
+          <Route path="/blogs/:id" element={ <BlogPage/> }></Route>
           <Route path="*" element={ <NotFound/> }></Route>
         </Routes>
         </div>

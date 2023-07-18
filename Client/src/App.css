@@ -4,6 +4,16 @@
   background-color: #0A0F10;
 }
 
+.loading h1{
+  color: #FFF;
+  background-color: #0A0F10;
+  font-family: "Roboto Mono";
+  font-size: 28px;
+  font-weight: 500;
+  margin-left: 60px;
+  padding-left: 5%;
+}
+
 /* Navbar stuff */
 
 .nav .links a{
@@ -74,11 +84,15 @@
   margin-right: 40px;
 }
 
+.card a{
+  text-decoration: none;
+  flex: 60%;
+}
+
 .blog-card{
   border-radius: 20px;
-  flex: 20%;
   color: #FFF;
-  padding: 6%;
+  padding: 8%;
   margin-top: 20px;
   margin-right: 20px;
   background-color: #11181b;
@@ -180,7 +194,21 @@
   font-size: 18px;
   margin-right: 60px;
   width: 90%;
-  height: 50vh;
+  height: 500px;
+  padding-left: 20px;
+  padding-top: 15px;
+  border-radius: 20px;
+}
+
+#medium{
+  background-color: #11181b;
+  color: #FFF;
+  font-family: "Roboto Mono";
+  font-weight: 500;
+  font-size: 18px;
+  margin-right: 60px;
+  width: 90%;
+  height: 200px;
   padding-left: 20px;
   padding-top: 15px;
   border-radius: 20px;
@@ -200,23 +228,67 @@
   border-radius: 20px;
 }
 
-button{
+.new-blog a{
   border-radius: 15px;
-  border: none;
   background-color: #92a6a4;
-  padding: 1px 15px;
   transition: 0.5s;
-  padding: 10px 15px;
   font-family: "Roboto Mono";
   font-size: 18px;
   font-weight: 500;
   color: #FFF;
   text-decoration: none;
-  transition: 0.5s; 
+  padding: 10px 15px;
+  display: block;
+  width: 65px;
   margin-top: 30px;
 }
 
-button:hover{
-  cursor: pointer;
+.new-blog a:hover{
   background-color: rgb(166, 186, 184); 
+}
+
+.blog-page{
+  padding-top: 10px;
+  margin-left: 60px;
+  padding-left: 5%;
+  color: #FFF;
+  font-family: "Roboto Mono";
+  font-weight: 500;
+}
+
+.blog-page h1{
+  font-size: 28;
+  margin-right: 60px;
+  width: 90%;
+}
+
+.blog-page p{
+  font-size: 14px;
+  margin-right: 60px;
+  width: 90%;
+}
+
+.blog-page h2{
+  font-size: 18px;
+  margin-right: 60px;
+  width: 90%;
+}
+
+.blog-page a{
+  border-radius: 15px;
+  background-color: #b85f5f;
+  transition: 0.5s;
+  font-family: "Roboto Mono";
+  font-size: 18px;
+  font-weight: 500;
+  color: #FFF;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  width: 65px;
+  margin-top: 30px;
+}
+
+.blog-page a:hover{
+  background-color: #d16a6a; 
 }
