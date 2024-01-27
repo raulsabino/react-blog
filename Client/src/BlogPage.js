@@ -8,13 +8,13 @@ const BlogPage = () => {
   const [blog, setBlog] = useState(null);
 
   useEffect(() => {
-    Axios.get(`http://localhost:8000/blogs/${id}`).then((response) => {
+    Axios.get(`https://raul-blog-server.onrender.com/blogs/${id}`).then((response) => {
       setBlog(response.data);
     });
   }, [id]);
 
   const deleteBlog = (id) => {
-    Axios.delete(`http://localhost:8000/delete/${id}`).then((response) => {
+    Axios.delete(`https://raul-blog-server.onrender.com/delete/${id}`).then((response) => {
       console.log(response.data);
     }).catch((error) => {
       console.log(error);
@@ -33,7 +33,7 @@ const BlogPage = () => {
     <div className="blog-page">
       <h1>{blog.title}</h1>
       <h2 style={{whiteSpace: "pre-wrap"}}>{blog.body}</h2>
-      <p>By {blog.author}</p>
+      <h2>By {blog.author}</h2>
       <Link to="/" onClick={() => deleteBlog(id)}>Delete</Link>
     </div>
   );

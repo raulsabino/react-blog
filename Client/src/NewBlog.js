@@ -9,7 +9,7 @@ const NewBlog = () => {
   const [author, setAuthor] = useState("");
 
   const addToList = () => {
-    Axios.post('http://localhost:8000/insert',{
+    Axios.post('https://raul-blog-server.onrender.com/insert',{
       title: title,
       description: description,
       body: body,

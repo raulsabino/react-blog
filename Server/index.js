@@ -3,13 +3,17 @@ const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
 const BlogModel = require('./models/blogs');
+require('dotenv').config();
 
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb+srv://raulbrazsabino:9KKnfJ9F9spPB78R@cluster1.6ydowp9.mongodb.net/?retryWrites=true&w=majority',{
+// MongoDB Connection
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
-});
+  useUnifiedTopology: true
+}).then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('Error connecting to MongoDB:', err));
 
 app.post("/insert", async (req,res) => {
   const title = req.body.title;
@@ -67,6 +71,6 @@ app.delete("/delete/:id", async (req, res) => {
   }
 });
 
-app.listen(8000, () => {
-  console.log(`Server is running on port ${8000}`);
+app.listen(8080, () => {
+  console.log(`Server is running on port ${8080}`);
 });

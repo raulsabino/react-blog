@@ -8,7 +8,7 @@ const Home = () => {
   const [blogs, setBlogs] = useState(null);
 
   useEffect(() => {
-    Axios.get('http://localhost:8000/read').then((response) => {
+    Axios.get('https://raul-blog-server.onrender.com/read').then((response) => {
       setBlogs(response.data)
     })
   }, []);
