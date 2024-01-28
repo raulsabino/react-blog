@@ -67,7 +67,7 @@
   border-radius: 20px;
   background-color: #11181b;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   padding: 10px 5%;
   margin: 0px 60px;
@@ -291,4 +291,26 @@
 
 .blog-page a:hover{
   background-color: #d16a6a; 
+}
+
+@media (max-width: 750px) {
+  .logo{
+    display: none;
+  }
+
+  .blog-card h1 {
+    font-size: 24px;
+  }
+
+  .blog-card h2 {
+    font-size: 14px;
+  }
+
+  .nav .links a {
+    padding-left: 15px;
+  }
+
+  .nav .button {
+    padding: 10px 10px;
+  }
 }
