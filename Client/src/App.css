@@ -322,4 +322,12 @@
   .nav {
     margin: 30px;
   }
+
+  .blog-page{
+    margin-left: 30px;
+  }
+
+  .new-blog {
+    margin-left: 10px;
+  }
 }
